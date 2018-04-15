@@ -1,0 +1,593 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding:0;
+	margin:0;
+	}
+img{
+	display:none;
+}
+#canvas{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+	position: absolute;
+}
+.coverd{
+	position:relative;
+	pointer-events: none;	
+}
+.font{
+	position:absolute;
+	top:2rem;
+	left:25rem;
+	color:#FFF;
+	font-size:3rem;
+	text-shadow:0rem 0rem 1rem #F36;
+	font-family:"Comic Sans MS", cursive;
+	width:30rem;
+	
+}
+.mess{
+	text-align:right;
+	position:absolute;
+	left:10rem;
+	top:10rem;
+	width:40rem;
+}
+.song , .songs{
+	text-align:right;
+	position:absolute;
+	left:10rem;
+	top:10rem;
+	color:#FFF;
+	font-size:2rem;	
+	font-family:"Comic Sans MS", cursive;
+	width:40rem;
+	z-index:100;
+	font-weight:bolder;
+}
+.songs{
+	text-shadow:0rem 0rem 2rem rgba(255,102,255,1),0rem 0rem 1rem rgba(255,102,255,1);
+}
+.song{
+	background: -webkit-linear-gradient(top, rgba(102,255,255,1)0%, rgba(255,255,255,1) 25% , rgba(255,255,102,1) 50% , rgba(102,255,255,1) 55%, rgba(255,255,255,1) 75% , rgba(255,255,102,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	z-index:150;
+}
+.buy{
+	width:40rem;
+	text-align:right;
+	position:absolute;
+	left:10rem;
+	top:17.5rem;
+	color:#666;
+	font-family:"微軟正黑體";
+	font-size:1.5rem;
+}
+.touch{
+	position:absolute;
+	width:960px;
+	text-align:center;
+	bottom:7rem;
+	color:#F6C;
+	font-family:"微軟正黑體";
+	font-size:2.5rem;
+	z-index:150;
+	text-shadow:0rem 0rem 1rem #FFFFFF,0rem 0rem 1rem #FFFFFF,0rem 0rem 1rem #FFFFFF,0rem 0rem 1rem #FFFFFF;
+	animation:linear touch 2.5s infinite;
+}
+.worker{
+	position:absolute;
+	width:960px;
+	text-align:center;
+	bottom:3rem;
+	font-family:"微軟正黑體";
+	font-size:1rem;
+	color:#333;
+	text-shadow:0rem 0rem 0.2rem #FFF;
+}
+.BG{
+	height:100vh;
+	width:100vw;
+	background:linear-gradient( rgba(51,51,51,1) 0% , rgba(30,30,30,1) 60% , rgba(0,0,0,1) 100%);
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:-1000;
+}
+.cover,.covers{
+	    background: radial-gradient( rgba(255,255,153,1), rgba(255,153,102,1) , rgba(255,153,153,1));
+}
+.covers{
+	z-index:300 !important;	
+}
+.cover-image{
+	border-radius:1rem;
+	box-shadow:#F69 0rem 0rem 1rem 0.1rem;
+	position:absolute;
+	height:20rem;
+	width:20rem;
+	top:3rem;
+	left:3rem;
+	background-image:url(img/WAO-WAO_Powerful_day!.jpg);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
+	z-index:100;
+	animation:linear cover 3s infinite;
+}
+.cover-images{
+	border-radius:1rem;
+	position:absolute;
+	height:20rem;
+	width:20rem;
+	top:3rem;
+	left:3rem;
+	background-image:url(img/lovelive_b.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
+	z-index:100;
+}
+.no{
+    -webkit-filter: grayscale(0.75);
+}
+.master,.load,.cover,.over,.covers{
+	position:fixed;
+	display:flex;
+	height:540px;
+	width:960px;
+	z-index:100;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+}
+.over{
+	background-color:#EFF0F4;
+	display:none;	
+}
+.IMG{
+	position:relative;
+	width:100%;
+	height:100%;
+	background-image:url(img/IMG_0002.jpeg);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
+}
+.END{
+	position:absolute;
+	width:100%;
+	text-align:center;
+	top:1rem;
+	color: #FFF;
+    font-size: 4rem;
+    text-shadow: 0rem 0rem 1rem #F36;
+    font-family: "Comic Sans MS", cursive;
+}
+#core{
+	position:absolute;
+	width:100%;
+	text-align:center;
+	font-size:2.5rem;
+	top:calc( 50% - 2rem );
+	background: -webkit-linear-gradient(top, rgba(102,255,255,1) -10%, rgba(255,102,204,1) 50% , rgba(255,255,102,1) 110% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	font-family:"Comic Sans MS","微軟正黑體", cursive;
+	font-weight:bolder;
+}
+#restart{	
+	position:absolute;
+	width:100%;
+	text-align:center;
+	font-size:2rem;
+	font-family:"Comic Sans MS","微軟正黑體", cursive;
+	bottom:2rem;
+}
+#restart div{
+	background:#F33;
+	width:10rem;
+	font-family:"Comic Sans MS","微軟正黑體", cursive;
+	margin:auto;
+	color:#FFF;	
+}
+.floor{
+	position:fixed;
+	bottom:0rem;
+	width:100vw;
+	height:calc( 80vh - 540px );	
+}
+.load{
+	z-index:200 !important;
+	bottom:calc( -30vh - 540px );
+}
+.load div{
+	flex:1;
+	height:7.5rem;
+	width:80%;
+	text-align:center;
+	position:relative;
+	bottom:0;
+}
+.load div div{
+	position:absolute;
+	left:0;
+	right:0;
+	max-height:7.5rem;
+	margin:auto;
+	Max-width:10rem;
+	background-repeat:no-repeat;
+	background-size:100%;
+	cursor: pointer;
+}
+.lha div{
+	background-image:url(img/audio/hanoya.PNG);
+}
+.lri div{
+	background-image:url(img/audio/rin.PNG);
+}
+.lma div{
+	background-image:url(img/audio/maki.PNG);
+}
+.lum div{
+	background-image:url(img/audio/umi.PNG);
+}
+.lho div{
+	background-image:url(img/audio/honoka.PNG);
+}
+.lko div{
+	background-image:url(img/audio/kotori.PNG);
+}
+.lel div{
+	background-image:url(img/audio/eli.PNG);
+}
+.lno div{
+	background-image:url(img/audio/nozomi.PNG);
+}
+.lni div{
+	background-image:url(img/audio/nico.PNG);
+}
+.anm1{
+	animation:linear anm1 4s infinite;
+}
+.anm2{
+	animation:linear anm2 5s infinite;
+}
+.anm3{
+	animation:linear anm3 5s infinite;
+}
+.anm4{
+	animation:linear anm4 3s infinite;
+}
+.anm5{
+	animation:linear anm5 5s infinite;
+}
+.anm6{
+	animation:linear anm6 5s infinite;
+}
+.anm7{
+	animation:linear anm7 3s infinite;
+}
+.anm8{
+	animation:linear anm8 3s infinite;
+}
+.anm9{
+	animation:linear anm9 3s infinite;
+}
+
+.pi{
+	-webkit-filter: grayscale(0.75);
+	flex:1;
+	background-repeat:no-repeat;
+	background-size:cover;
+	transition:.5s;
+	cursor: pointer;	
+}
+.pi:hover{
+	-webkit-filter: grayscale(0);
+}
+.rin{
+	background-image:url(img/card/img_rin_4_r_4.png);
+	background-position:52.5% 40%;
+}
+.maki{
+	background-image:url(img/card/img_maki_4_b_3.png);
+	background-position:62.5% 40%;
+}
+.hanayo{
+	background-image:url(img/card/img_hanayo_4_g_3.png);
+	background-position:60% 40%;
+}
+.umi{
+	background-image:url(img/card/img_umi_4_b_3.png);
+	background-position:47.5% 40%;
+}
+.honoka{
+	background-image:url(img/card/img_honoka_4_r_3.png);
+	background-position:55% 40%;	
+}
+.kotori{
+	background-image:url(img/card/img_kotori_4_g_3.png);	
+	background-position:67.5% 40%;	
+}
+.eli{
+	background-image:url(img/card/img_eli_4_b_3.png);	
+	background-position:57.5% 40%;	
+}
+.nozomi{
+	background-image:url(img/card/img_tojo_4_g_3.png);
+	background-position:57.5% 40%;		
+}
+.nico{
+	background-image:url(img/card/img_nico_4_r_3.png);
+	background-position:60% 40%;		
+}
+#temp img{
+	display:none;	
+}
+@keyframes touch{
+	0%{
+		opacity:0;
+	}
+	50%{
+		opacity:1;	
+	}
+	100%{
+		opacity:0;	
+	}
+}
+@keyframes anm1{
+	0%{
+		transform:rotate(0deg);
+	}
+	5%{
+		transform:rotate(10deg);
+	}
+	10%{
+		transform:rotate(0deg);	
+	}
+	15%{
+		transform:rotate(-10deg);	
+	}
+	20%{
+		transform:rotate(0deg);	
+	}
+	100%{
+		padding-left:0rem;
+	}
+} 
+@keyframes anm2{
+	0%{
+		transform:rotate(-5deg);
+		right:0;
+		top:0;
+	}
+	5%{
+		transform:rotate(10deg);
+		right:-2rem;
+		top:-1rem;
+	}
+	10%{
+		top:0;
+		right:-2rem;
+		transform:rotate(0deg);	
+	}
+	15%{
+		top:0;
+		right:-2rem;
+		transform:rotate(5deg);	
+	}
+	20%{
+		top:0;
+		transform:rotate(0deg);	
+	}
+	25%{
+		top:0;
+		transform:rotate(-5deg);	
+	}
+	30%{
+		top:0;
+		right:-2rem;	
+	}
+	70%{
+		top:0;
+		right:-2rem;
+		transform:rotate(10deg);
+	}
+	75%{
+		transform:rotate(-5deg);
+		left:2rem;
+		top:-1rem;
+	}
+	80%{
+		top:0rem;
+	}
+	
+} 
+@keyframes anm3{
+	0%{
+		transform:rotateY(0deg);	
+	}
+	5%{
+		transform:rotateY(180deg);
+	} 
+	70%{
+		transform:rotateY(180deg);
+	}
+	75%{
+		transform:rotateY(0deg);	
+	}
+	
+}
+@keyframes anm4{
+	0%{
+		transform:rotate(0deg);
+		transform-origin:right bottom;
+	}
+	5%{
+		transform:rotate(5deg);
+		transform-origin:right bottom;
+	}
+	10%{
+		transform:rotate(0deg);
+		transform-origin:right bottom;
+	}
+	15%{
+		transform:rotate(-5deg);
+		transform-origin:right bottom;	
+	}
+	20%{
+		transform:rotate(0deg);
+		transform-origin:right bottom;	
+	}
+	
+}
+@keyframes anm5{
+   0{
+	   transform:rotate(0deg);
+   }
+   10%{
+	   top:-1rem;
+	   right:-2rem;
+	   transform:rotate(-10deg);
+   }
+   15%{
+	   	top:0rem;
+		right:-2rem;
+	    transform:rotate(-5deg);
+   }
+   20%{
+	   	top:0rem;
+		right:-2rem;
+		 transform:rotate(0deg);
+   }
+   40%{
+	   	right:0rem;
+		top:0;
+   }
+   50%{
+	   top:-1rem;
+	   left:-2rem;
+	   transform:rotate(10deg);
+   }
+   55%{
+	   top:0rem;
+	   left:-2rem;
+	   transform:rotate(5deg);
+   }
+   60%{
+	   top:0rem;
+	   left:0rem;
+   }
+}
+@keyframes anm6{
+	0%{
+		top:0rem;	
+	}
+	5%{
+		top:-2rem;	
+	}
+	7.5%{
+		top:-2rem;	
+	}
+	10%{
+		top:0rem;	
+	}
+}
+@keyframes anm7{
+	0%{
+		transform:rotate(0deg);	
+	}
+	5{
+		transform:rotate(-10deg);	
+	}
+	10%{
+		transform:rotate(10deg);
+	}
+	15%{
+		transform:rotate(0deg);	
+	}
+	40%{
+		transform:rotate(0deg);	
+		left:0rem;	
+	}
+	45%{
+		transform:rotate(5deg);
+		transform-origin:left top;
+		left:-1rem;	
+	}
+	50%{
+		transform:rotate(-5deg);
+		transform-origin:left top;	
+		left:-1rem;	
+	}
+	55%{
+		transform:rotate(0deg);
+		left:0rem;	
+	}
+}
+@keyframes anm8{
+	0%{
+		transform:rotate(0deg);
+		transform-origin:left bottom;	
+	}
+	10%{
+		transform:rotate(10deg);
+		transform-origin:left bottom;
+	}
+	20%{
+		transform:rotate(0deg);
+		transform-origin:left bottom;
+	}
+	30%{
+		transform:rotate(-10deg);
+		transform-origin:right bottom;
+	}
+	40%{
+		transform:rotate(0deg);
+		transform-origin:left bottom;
+	}
+}
+@keyframes anm9{
+	0%{
+		transform:rotate(0deg);
+	}
+	10%{
+		transform:rotate(10deg);
+	}
+	20%{
+		transform:rotate(0deg);
+	}
+	30%{
+		transform:rotate(-10deg);
+	}
+	60%{
+		top:0rem;
+	}
+	70%{
+		top:-2rem;
+	}
+	80%{
+		top:0rem;	
+	}
+}
+@keyframes cover{
+ 0%{
+	 box-shadow:inset 0rem 0rem 0rem 1.5rem rgba(255,255,255,0);
+	 }
+ 50%{
+	 box-shadow:inset 0rem 0rem 3rem 1.5rem rgba(255,255,255,0.8);
+	 }
+ 100%{
+	 box-shadow:inset 0rem 0rem 0rem 1.5rem rgba(255,255,255,0);
+	 }	  
+	}
